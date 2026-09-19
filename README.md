@@ -14,7 +14,7 @@ A full-stack job board platform built with the **MERN stack** (MongoDB, Express,
 
 **As an Employer**
 
-- Post and delete job listings
+- Post, edit, and delete job listings
 - View all applicants for each job
 - Update application status (Pending → Reviewed → Shortlisted → Accepted / Rejected)
 
@@ -176,15 +176,5 @@ JobBoard/
 | `MONGO_URI`  | Your MongoDB Atlas connection string | `mongodb+srv://...` |
 | `JWT_SECRET` | Secret key used to sign tokens       | `mysecretkey123`    |
 | `NODE_ENV`   | Environment mode                     | `development`       |
-
----
-
-## Deployment
-
-| Part     | Platform      |
-| -------- | ------------- |
-| Frontend | Vercel        |
-| Backend  | Render        |
-| Database | MongoDB Atlas |
 
 ---
