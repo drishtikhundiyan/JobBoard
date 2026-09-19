@@ -12,6 +12,7 @@ import JobSeekerDashboard from './pages/JobSeekerDashboard';
 import PostJob from './pages/PostJob';
 import ApplyJob from './pages/ApplyJob';
 import Profile from './pages/Profile';
+import EditJob from './pages/EditJob';
 
 // Components
 import Navbar from './components/Navbar';
@@ -36,8 +37,10 @@ const AppContent = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
+
       <main>
         <Routes>
+
           {/* Public Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -63,11 +66,22 @@ const AppContent = () => {
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/employer/post-job"
             element={
               <ProtectedRoute allowedRole="employer">
                 <PostJob />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* Edit Job */}
+          <Route
+            path="/employer/jobs/:id/edit"
+            element={
+              <ProtectedRoute allowedRole="employer">
+                <EditJob />
               </ProtectedRoute>
             }
           />
@@ -81,6 +95,7 @@ const AppContent = () => {
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/jobs/:id/apply"
             element={
@@ -92,6 +107,7 @@ const AppContent = () => {
 
           {/* Catch all */}
           <Route path="*" element={<Navigate to="/" replace />} />
+
         </Routes>
       </main>
     </div>
